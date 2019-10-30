@@ -4,8 +4,16 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    // Add typescript stack into webpack
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+     {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "myPage",
+        fieldName: "myPage",
+        url: "https://api-euwest.graphcms.com/v1/ck2d5g89d2vcu01ff65f04cbh/master",
+      },
+    },
+
   ],
 }
