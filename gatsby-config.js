@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Typescript Starter`,
+    title: `Erwin Heba Portfolio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,7 +13,6 @@ module.exports = {
         fieldName: "myPage",
         url: "https://api-euwest.graphcms.com/v1/ck2d5g89d2vcu01ff65f04cbh/master",
       },
-    },
-
-  ],
+    }
+  ]
 }
