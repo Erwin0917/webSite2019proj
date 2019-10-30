@@ -4,15 +4,11 @@ import Helmet from 'react-helmet'
 import './index.css'
 
 
-interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
-  location: {
-    pathname: string
-  }
+interface PageWrapperProps extends React.HTMLProps<HTMLDivElement> {
   children: any
 }
 
-class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
-  public render() {
+const PageWrapper = (props:PageWrapperProps) => {
     return (
       <div>
         <Helmet
@@ -22,19 +18,11 @@ class DefaultLayout extends React.PureComponent<DefaultLayoutProps, void> {
             { name: 'keywords', content: 'front end developer, javascript developer, web developer, portfolio, new technologies' },
           ]}
         />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {this.props.children}
+        <div>
+          {props.children}
         </div>
       </div>
     )
-  }
 }
 
-export default DefaultLayout
+export default PageWrapper
