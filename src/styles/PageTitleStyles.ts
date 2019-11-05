@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Color } from './general/config';
+import { Color } from './const/config';
 
 export const PrimaryPageTitle = styled.h1`
 	font-size: 6rem;

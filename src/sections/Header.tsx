@@ -1,26 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PrimaryPageTitle, SecondaryPageTitle } from '../styles/PageTitleStyles';
-import { ColoredElement } from '../styles/utils/coloredElement';
-import { Color } from '../styles/general/config';
+import { ColoredElement } from '../styles/ColoredElement';
+import { Color, ButtonSize } from '../styles/const/config';
 import SocialPanel from '../components/SocialPanel';
 import AboutMe from '../components/AboutMe';
+import { Button } from '../styles/UI/Button';
+import { StyledHeader } from '../styles/Header';
+import { MediaQuery } from '../styles/const/media';
 
-import mainBackground from '../assets/img/Background.png';
+const StyledButton = styled(Button)`
+	&&& {
+		transition: 0.1s ease-out;
+		box-shadow: 0px 3px 6px #000000a6;
+		margin-top: 50px;
 
-const StyledHeader = styled.div`
-	position: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	background: url(${mainBackground});
-	background-position: center;
-	background-size: cover;
-	height: calc(100vh - 40px);
-	width: calc(100% - 40px);
-	padding: 25px;
-	color: ${Color.PRIMARY_TEXT};
+		&:hover {
+			box-shadow: 0px 0px 6px #000000a6;
+			transform: translateY(1px);
+		}
+	}
 `;
 
 const Header = () => {
@@ -39,8 +38,7 @@ const Header = () => {
 			</SecondaryPageTitle>
 			<AboutMe />
 			<SocialPanel />
-
-			<button>KEEP GOING</button>
+			<StyledButton size={ButtonSize.BIG}>KEEP GOING</StyledButton>
 		</StyledHeader>
 	);
 };

@@ -1,4 +1,4 @@
-import { Color } from './general/config';
+import { Color } from './const/config';
 import styled from 'styled-components';
 
 export const AboutMeStyles = styled.p`
@@ -6,10 +6,7 @@ export const AboutMeStyles = styled.p`
 	max-width: 800px;
 	line-height: 1.4;
 	font-size: 2rem;
-	/* text-shadow: 0px 3px 6px rgba(0, 0, 0, 1); */
 	margin: 40px 0;
-	/* box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.15); */
-	/* background-color: rgba(0, 0, 0, 0.15); */
 	padding: 5px;
 	color: ${Color.DARK_TEXT};
 
