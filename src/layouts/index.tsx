@@ -1,28 +1,29 @@
-import * as React from 'react'
-import Helmet from 'react-helmet'
+import * as React from 'react';
+import Helmet from 'react-helmet';
 
-import './index.css'
-
+import '../styles/general/reset.css';
+import '../styles/general/pageWrapperStyle.css';
 
 interface PageWrapperProps extends React.HTMLProps<HTMLDivElement> {
-  children: any
+	children: any;
 }
 
-const PageWrapper = (props:PageWrapperProps) => {
-    return (
-      <div>
-        <Helmet
-          title="Erwin Heba page"
-          meta={[
-            { name: 'description', content: 'Portfolio page' },
-            { name: 'keywords', content: 'front end developer, javascript developer, web developer, portfolio, new technologies' },
-          ]}
-        />
-        <div>
-          {props.children}
-        </div>
-      </div>
-    )
-}
+const PageWrapper = (props: PageWrapperProps) => {
+	return (
+		<div>
+			<Helmet
+				title='Erwin Heba page'
+				meta={[
+					{ name: 'description', content: 'Portfolio page' },
+					{
+						name: 'keywords',
+						content: 'front end developer, javascript developer, web developer, portfolio, new technologies'
+					}
+				]}
+			/>
+			<div>{props.children}</div>
+		</div>
+	);
+};
 
-export default PageWrapper
+export default PageWrapper;

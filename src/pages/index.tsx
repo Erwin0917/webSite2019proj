@@ -1,43 +1,50 @@
-import * as React from 'react'
-import PageWrapper from '../layouts'
-
+import * as React from 'react';
+import PageWrapper from '../layouts';
+import { graphql } from 'gatsby';
+import Header from '../sections/Header';
+import PageBorder from '../components/PageBorder';
 
 interface IndexPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-  }
+	data: {
+		site: {
+			siteMetadata: {
+				title: string;
+			};
+		};
+		myPage: {
+			technologieses: [{ id: number; technology: string }];
+		};
+	};
 }
 
 export default class extends React.Component<IndexPageProps, {}> {
+	constructor(props: IndexPageProps, context: any) {
+		super(props, context);
+	}
 
-  constructor(props: IndexPageProps, context: any) {
-    super(props, context)
-  }
-
-  public render() {
-    return (
-      <PageWrapper>
-        <h1>Hi people</h1>
-        <p>
-          Welcome to your new{' '}
-          <strong>{this.props.data.site.siteMetadata.title}</strong> site.
-        </p>
-        <p>Init dev branch</p>
-      </PageWrapper>
-    )
-  }
+	public render() {
+		return (
+			<PageWrapper>
+				<PageBorder>
+					<Header />
+				</PageBorder>
+			</PageWrapper>
+		);
+	}
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+export const myQuery = graphql`
+	query IndexQuery {
+		site {
+			siteMetadata {
+				title
+			}
+		}
+		myPage {
+			technologieses {
+				id
+				technology
+			}
+		}
+	}
+`;
