@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import '../styles/general/reset.css';
-import '../styles/general/pageWrapperStyle.css';
+import { GlobalStyles } from '../styles/general/globalStyles';
 
 interface PageWrapperProps extends React.HTMLProps<HTMLDivElement> {
 	children: any;
@@ -11,6 +10,7 @@ interface PageWrapperProps extends React.HTMLProps<HTMLDivElement> {
 const PageWrapper = (props: PageWrapperProps) => {
 	return (
 		<div>
+			<GlobalStyles />
 			<Helmet
 				title='Erwin Heba page'
 				meta={[

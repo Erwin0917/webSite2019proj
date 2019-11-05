@@ -1,4 +1,4 @@
-html,
+export const resetStyle = `html,
 body,
 div,
 span,
@@ -128,3 +128,4 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+`;
