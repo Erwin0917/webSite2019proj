@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
 
-import { GlobalStyles } from '../styles/general/globalStyles';
+import { GlobalStyles } from '../styles/general/GlobalStyles';
 
 interface PageWrapperProps extends React.HTMLProps<HTMLDivElement> {
 	children: any;
